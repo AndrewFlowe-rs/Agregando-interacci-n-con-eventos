@@ -1,3 +1,4 @@
+
 window.onload = function(){
     //JavaScript del Index
     let container = document.querySelector('.container');
@@ -5,13 +6,16 @@ window.onload = function(){
     let destacado = document.querySelectorAll('p');
     let fondo = document.querySelector('body');
     let enlace = document.querySelector('a');
-    
+    let logoDigital = document.querySelector('.logoDH ');
+     let menuLateral = document.querySelector('#menu');
     let nombre = prompt('Ingrese su nombre');
+
+
     console.log(nombre);
-    if(nombre !=''){
-        subtitulo.innerHTML += nombre;
+    if(nombre){
+        subtitulo.innerHTML += `al sitio ${nombre} `;
     }else{
-        subtitulo.innerHTML += 'INVITADO';
+        subtitulo.innerHTML += ' INVITADO';
     }
         
     subtitulo.style.textTransform = 'uppercase';
@@ -28,7 +32,14 @@ window.onload = function(){
             destacado[i].classList.add('destacadoImpar');
         }
     }
-    
-
     container.style.display = 'block';
+
+
+    logoDigital.addEventListener('click', () => {
+        menuLateral.classList.toggle('mostrar'); //classList.add('ocultar') = 'block';
+    });
+    logoDigital.addEventListener('mouseover', () => {
+        menuLateral.classList.remove('mostrar');
+    });
+
 }
